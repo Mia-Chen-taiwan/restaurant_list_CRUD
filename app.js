@@ -41,8 +41,17 @@ app.get('/restaurants/new', (req,res) => {
 })
 
 app.post('/restaurants', (req, res) => {
-  const name = req.body.name
-  return Restaurant.create({ name })
+  const restaurant = req.body
+  return Restaurant.create({
+    name: restaurant.name,
+    category: restaurant.category,
+    image: restaurant.image,
+    location: restaurant.location,
+    phone: restaurant.phone,
+    google_map: `https://www.google.com/maps/search/?api=1&query=${restaurant.location}`,
+    description: restaurant.description,
+    rating: restaurant.rating
+  })
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })

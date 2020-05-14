@@ -34,13 +34,21 @@
         </span>
         <input required type="text" placeholder="category" name="category">
       </p>
+      
+      <p class="mb-3">
+        <span>
+          <i class="fas fa-utensils pr-2"></i>
+          評分：
+        </span>
+        <input required type="text" placeholder="rating (1.0 ~ 5.0)" name="rating">
+      </p>
 
       <p class="mb-3">
         <span>
           <i class="fas fa-map-marker-alt pr-2"></i>
           地址：
         </span>
-        <input type="text" placeholder="location" name="location">
+        <input required type="text" placeholder="location" name="location">
       </p>
 
       <p class="mb-3">
@@ -48,7 +56,7 @@
           <i class="fas fa-mobile-alt pr-2"></i>
           電話：
         </span>
-        <input type="text" placeholder="phone" name="phone">
+        <input required type="text" placeholder="phone" name="phone">
       </p>
 
       <p class="mb-5">
@@ -62,12 +70,17 @@
       <div class="form-group">
         <span>
           <i class="fas fa-camera pr-2"></i>
-          餐廳照片 :
+          餐廳照片(url) :
         </span>
-        <input type="file" class="form-control-file mt-2" name="image">
+        <input required type="text" placeholder="image url" name="image">
       </div>
 
-      <button type="submit">新增</button>
+        <div class=" text-center mb-3">
+          <button type="submit" class="mx-auto btn btn-info">完成</button>
+          <a href="/">
+            <button class="ml-3 btn btn-info">返回</button>
+          </a>
+        </div>
 
     </div>
   </div>
