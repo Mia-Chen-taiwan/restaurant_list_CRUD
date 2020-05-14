@@ -1,0 +1,88 @@
+<header>
+  <!-- navigation -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="好。吃">
+          我的餐廳清單
+        </a>
+    </div>
+  </nav>
+
+  <div class="banner"></div>
+</header>
+<form action="/restaurants/{{ restaurant._id }}/edit" method="POST">
+
+  <div class="container mt-5">
+    <h3>編輯餐廳資訊</h3>
+  <div class="row mt-4">
+    <div class="col-12 col-md-10 mx-auto">
+
+      <p class="mb-3">
+        <span>
+          <i class="fas fa-home pr-2"></i>
+          名稱：
+        </span>
+        <input required type="text" placeholder="中文名稱" name="name" value="{{ restaurant.name }}">
+        <input type="text" placeholder="name in English" name="name_en" value="{{ restaurant.name_en }}">
+      </p>
+
+      <p class="mb-3">
+        <span>
+          <i class="fas fa-utensils pr-2"></i>
+          類別：
+        </span>
+        <input required type="text" placeholder="category" name="category" value="{{ restaurant.category }}">
+      </p>
+      
+      <p class="mb-3">
+        <span>
+          <i class="fas fa-utensils pr-2"></i>
+          評分：
+        </span>
+        <input required type="text" placeholder="rating (1.0 ~ 5.0)" name="rating" value="{{ restaurant.rating }}">
+      </p>
+
+      <p class="mb-3">
+        <span>
+          <i class="fas fa-map-marker-alt pr-2"></i>
+          地址：
+        </span>
+        <input required type="text" placeholder="location" name="location" value="{{ restaurant.location }}">
+      </p>
+
+      <p class="mb-3">
+        <span>
+          <i class="fas fa-mobile-alt pr-2"></i>
+          電話：
+        </span>
+        <input required type="text" placeholder="phone" name="phone" value="{{ restaurant.phone }}">
+      </p>
+
+      <p class="mb-5">
+        <span>
+          <i class="fas fa-info-circle pr-2"></i>
+          餐廳簡介：
+        </span>
+        <textarea class="form-control mt-2" placeholder="About the restaurant..." name="description" rows="3">{{ restaurant.description }}</textarea>
+      </p>
+     
+      <p>
+        <span>
+          <i class="fas fa-camera pr-2"></i>
+          餐廳照片(url) :
+        </span>
+        <input required type="text" placeholder="image url" name="image" value="{{ restaurant.image }}">
+      </p>
+
+        <div class=" text-center mb-3">
+          <button type="submit" class="mx-auto btn btn-info">完成</button>
+          <a href="/">
+            <button class="ml-3 btn btn-info">返回</button>
+          </a>
+        </div>
+
+    </div>
+  </div>
+</div>
+</form>

@@ -44,6 +44,7 @@ app.post('/restaurants', (req, res) => {
   const restaurant = req.body
   return Restaurant.create({
     name: restaurant.name,
+    name: restaurant.name_en,
     category: restaurant.category,
     image: restaurant.image,
     location: restaurant.location,
@@ -62,6 +63,35 @@ app.get('/restaurants/:id', (req, res) => {
   return Restaurant.findById(id)
     .lean()
     .then((restaurant) => res.render('show', { restaurant }))
+    .catch(error => console.log(error))
+})
+
+// UPDATE 編輯餐廳資料
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('edit', { restaurant }))
+    .catch(error => console.log(error))
+})
+
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  const restaurant = req.body
+  return Restaurant.findById(id)
+    .then(r => {
+      r.name = restaurant.name
+      r.name_en = restaurant.name_en
+      r.category = restaurant.category
+      r.rating = restaurant.rating
+      r.image = restaurant.image
+      r.location = restaurant.location
+      r.phone = restaurant.phone
+      r.google_map = `https://www.google.com/maps/search/?api=1&query=${restaurant.location}`
+      r.description = restaurant.description
+      return r.save()
+    })
+    .then(() => res.redirect(`/restaurants/${id}`))
     .catch(error => console.log(error))
 })
 

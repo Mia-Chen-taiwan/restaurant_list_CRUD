@@ -30,7 +30,7 @@
           <i class="fas fa-map-marker-alt pr-2"></i>
           地址：
         </span>
-        { restaurant.location}
+        {{ restaurant.location }}
         <a href="{{ restaurant.google_map}}" class="text-secondary" target="_blank">
           <i class="fas fa-location-arrow pr-2 fa-xs"></i>
         </a>
@@ -49,10 +49,16 @@
       </p>
 
       <img class="rounded mx-auto d-block mb-4 w-100" src="{{ restaurant.image }}" alt="{{ restaurant.name }}" style="max-width: 600px;">
+      
+      <div class=" text-center mb-3">
+        <a href="/restaurants/{{ restaurant._id }}/edit">
+          <button type="submit" class="mx-auto btn btn-warning">編輯</button>
+        </a>
+        <a href="/">
+          <button class="ml-3 btn btn-info">返回</button>
+        </a>
+      </div>
 
-      <a href="/">
-        <button class="ml-3 btn btn-info">返回</button>
-      </a>
     </div>
   </div>
 </div>
