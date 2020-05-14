@@ -1,41 +1,42 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const restaurantSchema = new Schema({
-  name: {
-    type: String, // 資料型別是字串
-    required: true // 這是個必填欄位
-  },
-  name_en: {
-    type: String,
-    required: true 
-  },
-  category: {
+  "name": {
     type: String,
     required: true
   },
-  image: {
+  "name_en": {
     type: String,
-    required: true 
+    required: false
   },
-  location: {
+  "category": {
     type: String,
-    required: true 
+    required: true
   },
-  phone: {
+  "image": {
     type: String,
-    required: true 
+    required: false
   },
-  google_map: {
+  "location": {
     type: String,
-    required: true 
+    required: false
   },
-  rating: {
-    type: Number,
-    required: true 
-  },
-  description: {
+  "phone": {
     type: String,
-    required: true 
+    required: false
+  },
+  "google_map": {
+    type: String,
+    required: false
+  },
+  "rating": {
+    type: String,
+    required: false
+  },
+  "description":{
+    type: String,
+    required: false
   }
 })
+
 module.exports = mongoose.model('Restaurant', restaurantSchema)
