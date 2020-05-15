@@ -16,7 +16,7 @@
 
 ## 環境建置與需求
 
-node.js v10.15.0 -執行環境 express v4.14.7 -框架 express-handlebars v4.0.4 -模板引擎
+node.js v10.15.0 -執行環境 express v4.14.7 -框架 express-handlebars v4.0.4 -模板引擎 body-parser v1.19.0 -解析POST  MongoDB, Mongoose v5.9.13 -資料庫
 
 ## 安裝與使用
 
