@@ -23,7 +23,7 @@ node.js v10.15.0 -執行環境 express v4.14.7 -框架 express-handlebars v4.0.4
 下載專案
 
 ```bash
-git clone https://github.com/Mia-Chen-taiwan/rubbish_generator.git
+git clone https://github.com/Mia-Chen-taiwan/restaurant_list_CRUD.git
 ```
 
 安裝package
