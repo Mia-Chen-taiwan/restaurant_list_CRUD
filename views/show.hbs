@@ -57,6 +57,9 @@
         <a href="/">
           <button class="ml-3 btn btn-info">返回</button>
         </a>
+        <form action="/restaurants/{{ restaurant._id }}/delete" method="POST" style="display: inline;">
+          <button type="submit" class="ml-3 btn btn-dark">刪除</button>
+        </form>
       </div>
 
     </div>
