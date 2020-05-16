@@ -4,11 +4,11 @@
 
 ## 畫面
 
-![home_page](restaurant_list.png)
+![home_page](./image/restaurant_list.png)
 
-![show_page](show_page.png)
+![show_page](./image/show_page.png)
 
-![delete_check_page](delete_check_page.png)
+![delete_check_page](./image/delete_check_page.png)
 
 ## Features
 
