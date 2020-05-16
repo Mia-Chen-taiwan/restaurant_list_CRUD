@@ -5,15 +5,21 @@
 ## 畫面
 
 ![home_page](restaurant_list.png)
+
 ![show_page](show_page.png)
+
 ![delete_check_page](delete_check_page.png)
 
 ## Features
 
 1.使用者可以新增一家餐廳
+
 2.使用者可以瀏覽一家餐廳的詳細資訊
+
 3.使用者可以瀏覽全部所有餐廳
+
 4.使用者可以修改一家餐廳的資訊
+
 5.使用者可以刪除一家餐廳
 
 ## 環境建置與需求
