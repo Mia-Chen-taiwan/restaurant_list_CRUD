@@ -33,6 +33,7 @@ header {
   
   .search-bar .search-bar-inner h4 {
     color: #9b4b4b;
+    font-weight: bold;
   }
   
   .form-control::placeholder {
@@ -56,6 +57,15 @@ header {
   
   .card img{
     height: 180px;
+  }
+
+  .card img:hover {
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+  }
+
+  .cover {
+    overflow: hidden;
   }
   
   .card-title{

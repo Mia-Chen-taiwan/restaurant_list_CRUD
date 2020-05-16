@@ -12,5 +12,17 @@ router.get('/', (req, res) => {
     .then(restaurants => res.render('index', { restaurants }))
     .catch(error => console.error(error))
 })
+
+// searching restaurant
+router.get('/search', (req, res) => {
+  const keyword = req.query.keyword
+  // 此處參考同學的作品
+  Restaurant.find({ $or: [{ name: new RegExp(keyword, 'i') }, { category: new RegExp(keyword, 'i') }] })
+  .lean()
+  .then(restaurants => res.render('index', { restaurants, keyword }))
+  .catch(error => console.log(error))
+})
+
+
 // 匯出路由模組
 module.exports = router

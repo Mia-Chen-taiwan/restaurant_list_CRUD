@@ -7,7 +7,9 @@
         我的餐廳清單
       </a>
       <a href="./restaurants/new">
-        <button type="submit" class="btn btn-info">新增餐廳</button>
+        <button type="submit" class="btn btn-info">
+          <i class="fas fa-plus pr-2"></i>新增餐廳
+        </button>
       </a>
     </div>
   </nav>
@@ -22,7 +24,7 @@
       <form action="/search">
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..." value="" aria-describedby="search-button">
+          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..." value="{{ keyword }}" aria-describedby="search-button">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
@@ -37,13 +39,28 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
+      <div class="dropdown mb-3">
+        <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          排序方式
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/sort/name/asc">餐廳名稱 (A-Z)</a>
+          <a class="dropdown-item" href="/sort/name/desc">餐廳名稱 (Z-A)</a>
+          <a class="dropdown-item" href="/sort/category/asc">餐廳類別</a>
+          <a class="dropdown-item" href="/sort/rating/desc">評分 (高-低)</a>
+          <a class="dropdown-item" href="/sort/rating/asc">評分 (低-高)</a>
+        </div>
+      </div>
+
       <div class="card-columns">
         {{#each restaurants}}
-        <a href="./restaurants/{{ this._id }}" class="text-secondary">
+        <a href="/restaurants/{{ this._id }}" class="text-secondary">
           <div class="card mb-3">
-            <img class="card-img-top" src="{{ this.image }}" alt="{{ this.name }}">
+            <div class="cover">
+              <img class="card-img-top" src="{{ this.image }}" alt="{{ this.name }}">
+            </div>
             <div class="card-body p-3">
-              <h6 class="card-title mb-1">{{ this.name }}</h6>
+              <h5 class="card-title mb-1 font-weight-bold">{{ this.name }}</h5>
               <div class="restaurant-category mb-1">
                 <i class="fas fa-utensils pr-2"></i> {{ this.category }}
               </div>
@@ -54,14 +71,15 @@
               </span>
 
               <div class="d-flex justify-content-end mt-2">
-                <a href="./restaurants/{{ this._id }}">
-                  <button class="btn btn-outline-warning p-1">detail</button>
-                </a>
                 <a href="./restaurants/{{ this._id }}/edit">
-                  <button class="btn btn-outline-primary p-1 ml-2">edit</button>
+                  <button class="btn btn-outline-primary btn-sm p-1 ml-2">
+                    <i class="fas fa-edit px-1"></i>
+                  </button>
                 </a>
                <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
-                 <button type="submit" class="btn btn-outline-danger p-1 ml-2">delete</button>
+                 <button type="submit" class="btn btn-outline-danger btn-sm p-1 ml-2">
+                   <i class="fas fa-trash-alt px-1"></i>
+                 </button>
                </form>
               </div>
 
