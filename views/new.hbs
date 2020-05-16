@@ -1,16 +1,3 @@
-<header>
-  <!-- navigation -->
-  <nav class="navbar navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="/">
-          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="好。吃">
-          我的餐廳清單
-        </a>
-    </div>
-  </nav>
-
-  <div class="banner"></div>
-</header>
 <form action="/restaurants" method="POST">
 
   <div class="container mt-5">
@@ -32,7 +19,7 @@
           <i class="fas fa-utensils pr-2"></i>
           類別：
         </span>
-        <input required type="text" placeholder="category" name="category">
+        <input required type="text" placeholder="日本料理、義式餐廳、咖啡..." name="category">
       </p>
       
       <p class="mb-3">
@@ -40,7 +27,7 @@
           <i class="fas fa-utensils pr-2"></i>
           評分：
         </span>
-        <input required type="text" placeholder="rating (1.0 ~ 5.0)" name="rating">
+        <input required type="text" placeholder="1.0 ~ 5.0" name="rating">
       </p>
 
       <p class="mb-3">
@@ -48,7 +35,7 @@
           <i class="fas fa-map-marker-alt pr-2"></i>
           地址：
         </span>
-        <input required type="text" placeholder="location" name="location">
+        <input required type="text" placeholder="台北市大安區...." name="location">
       </p>
 
       <p class="mb-3">
@@ -56,7 +43,7 @@
           <i class="fas fa-mobile-alt pr-2"></i>
           電話：
         </span>
-        <input required type="text" placeholder="phone" name="phone">
+        <input required type="text" placeholder="04 1234 5678" name="phone">
       </p>
 
       <p class="mb-5">
@@ -72,7 +59,7 @@
           <i class="fas fa-camera pr-2"></i>
           餐廳照片(url) :
         </span>
-        <input required type="text" placeholder="image url" name="image">
+        <input required type="text" placeholder="http://..." name="image">
       </div>
 
         <div class=" text-center mb-3">
