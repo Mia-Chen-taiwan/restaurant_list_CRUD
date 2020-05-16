@@ -16,6 +16,19 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
+      {{#if del}}
+      <div class="alert alert-danger" role="alert">
+        你確定要刪除此筆餐廳資料嗎? 刪除後無法復原。
+      <div class="text-right">
+        <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST" style="display: inline;">
+          <button type="submit" class="ml-3 btn btn-danger">刪除</button>
+        </form>
+        <a href="/">
+          <button class="ml-3 btn btn-info">復原</button>
+        </a>
+      </div> 
+      </div>
+      {{/if}}
 
       <p class="mb-1">
         <span class="text-secondary">
@@ -50,6 +63,7 @@
 
       <img class="rounded mx-auto d-block mb-4 w-100" src="{{ restaurant.image }}" alt="{{ restaurant.name }}" style="max-width: 600px;">
       
+      {{#if show}}
       <div class=" text-center mb-3">
         <a href="/restaurants/{{ restaurant._id }}/edit">
           <button type="submit" class="mx-auto btn btn-warning">編輯</button>
@@ -57,10 +71,12 @@
         <a href="/">
           <button class="ml-3 btn btn-info">返回</button>
         </a>
-        <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST" style="display: inline;">
+        <a href="/restaurants/{{ restaurant._id }}/delete" style="display: inline;">
           <button type="submit" class="ml-3 btn btn-danger">刪除</button>
-        </form>
+        </a>
       </div>
+      {{/if}}
+      
 
     </div>
   </div>

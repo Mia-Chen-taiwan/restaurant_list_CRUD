@@ -3,7 +3,6 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
-
 // CREATE 新增餐廳
 router.get('/new', (req,res) => {
     return res.render('new')
@@ -29,9 +28,10 @@ router.post('/', (req, res) => {
 // READ 瀏覽特定餐廳詳細資訊
 router.get('/:id', (req, res) => {
   const id = req.params.id
+  const show = true
   return Restaurant.findById(id)
     .lean()
-    .then((restaurant) => res.render('show', { restaurant }))
+    .then((restaurant) => res.render('show', { restaurant, show }))
     .catch(error => console.log(error))
 })
   
@@ -65,6 +65,15 @@ router.put('/:id', (req, res) => {
 })
   
 // DELETE 刪除餐廳
+router.get('/:id/delete', (req, res) => {
+  const id = req.params.id
+  const del = true
+  Restaurant.findById(id)
+    .lean()
+    .then((restaurant => res.render('show', { restaurant, del })))
+    .catch(error => console.log(error))
+})
+
 router.delete('/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
